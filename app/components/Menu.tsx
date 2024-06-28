@@ -2,7 +2,8 @@ import { Link } from "@remix-run/react";
 import { ButtonPrimary } from "./shared/ButtonPrimary";
 import Modal from "./shared/Modal";
 import { useState } from "react";
-import AddCategoryForm from "~/routes/add-category-form/_index";
+import AddCategoryForm from "~/routes/add-category-form/route";
+
 export function Menu() {
   const [show, setShow] = useState(false);
   const [content, setContent] = useState(null);

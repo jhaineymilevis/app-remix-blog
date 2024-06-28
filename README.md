@@ -1,6 +1,6 @@
 # Remix Blog
 
-- Creando un blog sencillo con remix js framework
+- Creando un blog sencillo con remix js framework, usando ficheros md
 
 # Welcome to Remix!
 

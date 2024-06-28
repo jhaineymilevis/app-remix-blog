@@ -1,10 +1,17 @@
+import classNames from "classnames";
+import { Menu } from "~/components/Menu";
 export function BasicLayout(props: { children: any }) {
-  const { children } = props;
+  const { children, className } = props;
 
   return (
     <>
-      <div>Menu</div>
-      <div className="container mx-auto">{children}</div>
+      <Menu />
+      <div className={`container mx-auto ${className}`}>{children}</div>
+      <div
+        className={classNames("container mx-auto", { [className]: className })}
+      >
+        {children}
+      </div>
     </>
   );
 }

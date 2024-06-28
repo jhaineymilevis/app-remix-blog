@@ -1,3 +1,7 @@
+# Remix Blog
+
+- Creando un blog sencillo con remix js framework
+
 # Welcome to Remix!
 
 - 📖 [Remix docs](https://remix.run/docs)

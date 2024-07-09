@@ -6,7 +6,7 @@ export function BasicLayout(props: { children: any }) {
   return (
     <>
       <Menu />
-      <div className={`container mx-auto ${className}`}>{children}</div>
+
       <div
         className={classNames("container mx-auto", { [className]: className })}
       >

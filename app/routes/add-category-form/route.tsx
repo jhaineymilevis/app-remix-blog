@@ -1,7 +1,7 @@
 import { Form, redirect } from "@remix-run/react";
 import { ButtonPrimary } from "~/components/shared/ButtonPrimary";
 import Input from "~/components/shared/Input";
-
+import { createCategory } from "~/api";
 export default function AddCategoryForm() {
   return (
     <Form method="POST" action="/add-category-form" className="flex flex-col">
@@ -24,6 +24,6 @@ export async function action(props) {
     slug: formData.get("slug"),
   };
 
-  console.log("data", data);
+  await createCategory(data);
   return redirect("/");
 }

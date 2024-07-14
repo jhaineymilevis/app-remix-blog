@@ -1,4 +1,5 @@
 import { Form, redirect, useParams } from "@remix-run/react";
+import { createPost } from "~/api/posts";
 import { ButtonPrimary } from "~/components/shared/ButtonPrimary";
 import Input from "~/components/shared/Input";
 import TextArea from "~/components/shared/TextArea";
@@ -40,5 +41,6 @@ export async function action(props) {
     content: formData.get("content"),
   };
 
+  createPost(data, category);
   return redirect("/");
 }

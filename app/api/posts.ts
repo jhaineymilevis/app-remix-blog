@@ -2,6 +2,7 @@ import fs from "fs/promises";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 import fm from "front-matter";
+import { marked } from "marked";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 export async function createPost(post: unknown, category: string) {
@@ -37,4 +38,11 @@ export async function getPosts(category: string) {
       return attributes;
     })
   );
+}
+
+export async function getPost(category, fileName) {
+  const postPath = join(__dirname, "..", `db/posts/${category}/${fileName}.md`);
+  const content = await fs.readFile(postPath, "utf-8");
+  const { attributes, body } = fm(content);
+  return { attributes, html: marked(body) };
 }
